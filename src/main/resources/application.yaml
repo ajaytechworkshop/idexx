@@ -1,0 +1,4 @@
+appconfig: 
+  resultSize: 5
+  iTunesBaseUrl: https://itunes.apple.com/search?
+  gBooksBaseUrl: https://www.googleapis.com/books/v1/volumes?
