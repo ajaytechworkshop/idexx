@@ -18,6 +18,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 
 @RestController
+@RequestMapping(value="/api/search")
 public class SearchController
 {
 	@Autowired
@@ -25,13 +26,7 @@ public class SearchController
 
 	private static final Logger log = LoggerFactory.getLogger(SearchController.class);
 	
-	@GetMapping
-	public String get()
-	{
-		return "IDEXX Assesment app";
-	}
-	
-	@GetMapping("/api/search/albumns")
+	@GetMapping("/albumns")
 	@ApiOperation(value="Responds with the albumns for the incoming search text from iTunes store")
 	@ApiResponses(value= {
 	@ApiResponse(code=200,message="Records retrieved successfully"),
@@ -43,7 +38,7 @@ public class SearchController
 		return searchService.getAlbumnsFromItunes(searchTerm,count);
 	}
 	
-	@GetMapping("/api/search/books")
+	@GetMapping("/books")
 	@ApiOperation(value="Responds with the books for the incoming search text from google books store")
 	@ApiResponses(value= {
 	@ApiResponse(code=200,message="Records retrieved successfully"),
